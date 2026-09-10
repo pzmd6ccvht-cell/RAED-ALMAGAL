@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RAED ALMAJAL | Cars, Trucks & Heavy Equipment</title>
+  <title>RAED ALMAJAL | Premium Vehicles</title>
 
   <style>
     * {
@@ -37,7 +37,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(8, 8, 8, 0.92);
+      background: rgba(8, 8, 8, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #292929;
     }
@@ -86,6 +86,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
+
       background:
         linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.45)),
         url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90")
@@ -251,6 +252,7 @@
     .car-image {
       height: 230px;
       overflow: hidden;
+      background: #1a1a1a;
     }
 
     .car-image img {
@@ -276,6 +278,12 @@
     .car-info p {
       color: #999;
       font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .year {
+      color: #ccc !important;
+      font-size: 13px !important;
     }
 
     .price {
@@ -415,7 +423,7 @@
   <nav>
     <div class="nav-container">
 
-      <a href="#" class="logo">
+      <a href="#home" class="logo">
         RAED <span>ALMAJAL</span>
       </a>
 
@@ -478,6 +486,7 @@
       <select>
         <option>Vehicle Type</option>
         <option>Cars</option>
+        <option>SUV</option>
         <option>Trucks</option>
         <option>Heavy Equipment</option>
       </select>
@@ -488,13 +497,16 @@
         <option>BMW</option>
         <option>Toyota</option>
         <option>Range Rover</option>
+        <option>Porsche</option>
+        <option>Audi</option>
       </select>
 
       <input
         type="text"
         placeholder="Model / Year">
 
-      <a href="#cars" class="btn btn-gold"
+      <a href="#cars"
+         class="btn btn-gold"
          style="text-align:center;">
         Search
       </a>
@@ -519,28 +531,32 @@
       </h2>
 
       <p class="section-text">
-        Discover a selection of quality vehicles available
-        through RAED ALMAJAL.
+        Discover our latest selection of quality vehicles
+        available through RAED ALMAJAL.
       </p>
 
 
       <div class="cars-grid">
 
 
+        <!-- CAR 1 -->
+
         <div class="car-card">
 
           <div class="car-image">
             <img
-              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85"
-              alt="Luxury car">
+              src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=85"
+              alt="Mercedes-Benz">
           </div>
 
           <div class="car-info">
 
-            <h3>Luxury Sedan</h3>
+            <h3>Mercedes-Benz C-Class</h3>
+
+            <p class="year">Year: 2024</p>
 
             <p>
-              Automatic · Petrol · Premium
+              Automatic · Petrol · Luxury
             </p>
 
             <div class="price">
@@ -556,17 +572,54 @@
         </div>
 
 
+        <!-- CAR 2 -->
+
         <div class="car-card">
 
           <div class="car-image">
             <img
-              src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=85"
-              alt="SUV">
+              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85"
+              alt="BMW SUV">
           </div>
 
           <div class="car-info">
 
-            <h3>Premium SUV</h3>
+            <h3>BMW X5</h3>
+
+            <p class="year">Year: 2025</p>
+
+            <p>
+              Automatic · Petrol · AWD
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- CAR 3 -->
+
+        <div class="car-card">
+
+          <div class="car-image">
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=85"
+              alt="Toyota">
+          </div>
+
+          <div class="car-info">
+
+            <h3>Toyota Land Cruiser</h3>
+
+            <p class="year">Year: 2024</p>
 
             <p>
               Automatic · Petrol · 4x4
@@ -585,20 +638,24 @@
         </div>
 
 
+        <!-- CAR 4 -->
+
         <div class="car-card">
 
           <div class="car-image">
             <img
-              src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=85"
-              alt="Sports car">
+              src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=85"
+              alt="Range Rover">
           </div>
 
           <div class="car-info">
 
-            <h3>Executive Vehicle</h3>
+            <h3>Range Rover Sport</h3>
+
+            <p class="year">Year: 2025</p>
 
             <p>
-              Automatic · Premium · Luxury
+              Automatic · Petrol · 4x4
             </p>
 
             <div class="price">
@@ -612,6 +669,73 @@
           </div>
 
         </div>
+
+
+        <!-- CAR 5 -->
+
+        <div class="car-card">
+
+          <div class="car-image">
+            <img
+              src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1000&q=85"
+              alt="Porsche">
+          </div>
+
+          <div class="car-info">
+
+            <h3>Porsche 911</h3>
+
+            <p class="year">Year: 2024</p>
+
+            <p>
+              Automatic · Petrol · Sport
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- CAR 6 -->
+
+        <div class="car-card">
+
+          <div class="car-image">
+            <img
+              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=85"
+              alt="Luxury Vehicle">
+          </div>
+
+          <div class="car-info">
+
+            <h3>Luxury SUV</h3>
+
+            <p class="year">Year: 2025</p>
+
+            <p>
+              Automatic · Petrol · Premium
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
 
       </div>
 
@@ -741,7 +865,7 @@
   <!-- FOOTER -->
 
   <footer>
-    © 2026 RAED ALMAJAL — Cars, Trucks & Heavy Equipment Import
+    © 2026 RAED ALMAJAL — Premium Vehicle Import
   </footer>
 
 </body>
