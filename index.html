@@ -1,37 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RAED ALMAJAL | Cars, Trucks & Heavy Equipment</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #292929;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #d6ad55;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #d6ad55;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 120px 25px 70px;
+    }
+
+    .hero-label {
+      color: #d6ad55;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #d6ad55;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #d0d0d0;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-gold {
+      background: #d6ad55;
+      color: #080808;
+    }
+
+    .btn-gold:hover {
+      background: #f0cb76;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #777;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #d6ad55;
+      color: #d6ad55;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      max-width: 1100px;
+      margin: -45px auto 80px;
+      position: relative;
+      z-index: 10;
+      background: #111;
+      border: 1px solid #292929;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    .search-box h3 {
+      margin-bottom: 18px;
+      color: #d6ad55;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 14px;
+      background: #080808;
+      color: white;
+      border: 1px solid #333;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #d6ad55;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      margin-bottom: 15px;
+    }
+
+    .section-text {
+      color: #aaa;
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    /* CARS */
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .car-card {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .car-card:hover {
+      transform: translateY(-7px);
+      border-color: #d6ad55;
+    }
+
+    .car-image {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .car-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .car-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .car-info {
+      padding: 22px;
+    }
+
+    .car-info h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .car-info p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .price {
+      color: #d6ad55;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #0d0d0d;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service {
+      padding: 35px 28px;
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 10px;
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #999;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .section-text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      padding: 14px 20px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      color: #ddd;
+    }
+
+    .contact-item:hover {
+      border-color: #d6ad55;
+      color: #d6ad55;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #292929;
+      padding: 30px 20px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-container {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .search-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cars-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .search-box {
+        margin: -25px 18px 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        RAED <span>ALMAJAL</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cars">Cars</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
 
 
-        <p>
-          Import of quality vehicles for personal,
-          business and commercial use.
-        </p>
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        Premium Vehicle Import
+      </div>
+
+      <h1>
+        Find Your
+        <span>Dream Car.</span>
+      </h1>
+
+      <p>
+        Premium cars, trucks and heavy equipment imported
+        with quality, reliability and professionalism.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#cars" class="btn btn-gold">
+          Explore Vehicles
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Contact Us
+        </a>
 
       </div>
 
+    </div>
 
-      <div class="service">
+  </section>
 
-        <div class="icon">🚛</div>
 
-        <h3>Trucks</h3>
+  <!-- SEARCH -->
 
-        <p>
-          Reliable trucks suitable for transportation,
-          logistics and commercial operations.
-        </p>
+  <div class="search-box">
+
+    <h3>Find Your Vehicle</h3>
+
+    <div class="search-grid">
+
+      <select>
+        <option>Vehicle Type</option>
+        <option>Cars</option>
+        <option>Trucks</option>
+        <option>Heavy Equipment</option>
+      </select>
+
+      <select>
+        <option>Brand</option>
+        <option>Mercedes-Benz</option>
+        <option>BMW</option>
+        <option>Toyota</option>
+        <option>Range Rover</option>
+      </select>
+
+      <input
+        type="text"
+        placeholder="Model / Year">
+
+      <a href="#cars" class="btn btn-gold"
+         style="text-align:center;">
+        Search
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- CARS -->
+
+  <section id="cars">
+
+    <div class="container">
+
+      <div class="section-label">
+        Featured Vehicles
+      </div>
+
+      <h2 class="section-title">
+        Our Latest Vehicles
+      </h2>
+
+      <p class="section-text">
+        Discover a selection of quality vehicles available
+        through RAED ALMAJAL.
+      </p>
+
+
+      <div class="cars-grid">
+
+
+        <div class="car-card">
+
+          <div class="car-image">
+            <img
+              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85"
+              alt="Luxury car">
+          </div>
+
+          <div class="car-info">
+
+            <h3>Luxury Sedan</h3>
+
+            <p>
+              Automatic · Petrol · Premium
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="car-card">
+
+          <div class="car-image">
+            <img
+              src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=85"
+              alt="SUV">
+          </div>
+
+          <div class="car-info">
+
+            <h3>Premium SUV</h3>
+
+            <p>
+              Automatic · Petrol · 4x4
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+              View Details
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="car-card">
+
+          <div class="car-image">
+            <img
+              src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=85"
+              alt="Sports car">
+          </div>
+
+          <div class="car-info">
+
+            <h3>Executive Vehicle</h3>
+
+            <p>
+              Automatic · Premium · Luxury
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+              View Details
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
 
+    </div>
 
-      <div class="service">
+  </section>
 
-        <div class="icon">🏗</div>
 
-        <h3>Heavy Equipment</h3>
+  <!-- SERVICES -->
 
-        <p>
-          Heavy machinery and equipment for construction,
-          infrastructure and industrial projects.
-        </p>
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-label">
+        What We Offer
+      </div>
+
+      <h2 class="section-title">
+        Vehicles & Equipment
+      </h2>
+
+      <p class="section-text">
+        Professional import services for personal,
+        commercial and business requirements.
+      </p>
+
+
+      <div class="services-grid">
+
+        <div class="service">
+
+          <div class="icon">🚘</div>
+
+          <h3>Cars</h3>
+
+          <p>
+            Import of quality vehicles for personal,
+            business and commercial use.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="icon">🚛</div>
+
+          <h3>Trucks</h3>
+
+          <p>
+            Reliable trucks suitable for transportation,
+            logistics and commercial operations.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="icon">🏗️</div>
+
+          <h3>Heavy Equipment</h3>
+
+          <p>
+            Heavy machinery and equipment for construction,
+            infrastructure and industrial projects.
+          </p>
+
+        </div>
 
       </div>
 
@@ -44,42 +694,46 @@
 
   <section class="contact" id="contact">
 
-    <div class="section-label">
-      Contact Us
-    </div>
+    <div class="container">
 
-    <h2 class="section-title">
-      Let's do business together.
-    </h2>
+      <div class="section-label">
+        Contact Us
+      </div>
 
-    <p class="section-text">
-      Contact RAED ALMAJAL for inquiries about cars,
-      trucks and heavy equipment imports.
-    </p>
+      <h2 class="section-title">
+        Let's Do Business Together.
+      </h2>
+
+      <p class="section-text">
+        Contact RAED ALMAJAL for inquiries about cars,
+        trucks and heavy equipment imports.
+      </p>
 
 
-    <div class="contact-info">
+      <div class="contact-info">
+
+        <a
+          class="contact-item"
+          href="tel:+218918488999">
+          📞 +218 91 848 8999
+        </a>
+
+        <a
+          class="contact-item"
+          href="mailto:RAEDALMAGAL@gmail.com">
+          ✉️ RAEDALMAGAL@gmail.com
+        </a>
+
+      </div>
+
 
       <a
-        class="contact-item"
-        href="tel:+218918488999">
-        📞 +218 91 848 8999
-      </a>
-
-      <a
-        class="contact-item"
-        href="mailto:RAEDALMAGAL@gmail.com">
-        ✉️ RAEDALMAGAL@gmail.com
+        href="https://wa.me/218918488999"
+        class="btn btn-gold">
+        WhatsApp Us
       </a>
 
     </div>
-
-
-    <a
-      href="https://wa.me/218918488999"
-      class="btn primary">
-      WhatsApp Us
-    </a>
 
   </section>
 
