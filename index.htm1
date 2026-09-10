@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAED ALMAJAL | Company</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #0b1f3a, #164e78);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #dbeafe;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #38bdf8;
+      color: #06233d;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #7dd3fc;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+      color: #0b1f3a;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+      color: #4b5563;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #0b1f3a;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #6b7280;
+    }
+
+    .contact {
+      background: #0b1f3a;
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    footer {
+      background: #061426;
+      color: #9ca3af;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">RAED ALMAJAL</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>RAED ALMAJAL</h1>
+      <p>
+        Professional solutions designed to help businesses grow,
+        succeed and reach new opportunities.
+      </p>
+      <a href="#contact" class="button">Contact Us</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about">
+      <p>
+        RAED ALMAJAL is a professional company focused on providing
+        high-quality solutions and services to our clients.
+        Our goal is to build trust, create value and achieve long-term success.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+
+      <div class="card">
+        <h3>Business Solutions</h3>
+        <p>
+          Smart solutions designed to support your business and improve performance.
+        </p>
+      </div>
