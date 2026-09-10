@@ -1,2 +1,3 @@
-# RAED-ALMAGAL
-Import of Cars, Trucks &amp; Heavy Equipment
+<img
+  src="IMG_7370.jpeg"
+  alt="Car 1">
