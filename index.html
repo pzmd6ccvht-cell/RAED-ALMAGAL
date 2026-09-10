@@ -1,48 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAED ALMAJAL | Premium Vehicles</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#080808;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#050505;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#d6ad55;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:500px;
+    padding:150px 7% 80px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero span{
+    color:#d6ad55;
+}
+
+.hero p{
+    font-size:20px;
+    color:#ddd;
+}
+
+.section{
+    padding:70px 6%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.section-title span{
+    color:#d6ad55;
+}
+
+.search-box{
+    max-width:600px;
+    margin:0 auto 45px;
+}
+
+.search-box input{
+    width:100%;
+    padding:17px;
+    border-radius:8px;
+    border:1px solid #444;
+    background:#111;
+    color:white;
+    font-size:16px;
+}
+
+.cars-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.car-card{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.car-card:hover{
+    transform:translateY(-5px);
+    border-color:#d6ad55;
+}
+
+.car-image{
+    position:relative;
+    height:240px;
+    background:#000;
+}
+
+.car-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.image-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,.75);
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+.image-counter{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    background:rgba(0,0,0,.75);
+    padding:6px 10px;
+    border-radius:5px;
+    font-size:13px;
+}
+
+.car-info{
+    padding:22px;
+}
+
+.car-info h3{
+    color:#d6ad55;
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.specs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin:15px 0;
+    color:#ccc;
+    font-size:14px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.whatsapp{
+    display:block;
+    text-align:center;
+    background:#25D366;
+    color:white;
+    padding:13px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.services{
+    background:#0d0d0d;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service{
+    background:#151515;
+    padding:30px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.service h3{
+    color:#d6ad55;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:12px 0;
+    color:#ccc;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#050505;
+    color:#888;
+}
+
+@media(max-width:900px){
+
+    .cars-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    nav a{
+        margin-left:8px;
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:450px;
+        padding:130px 7% 60px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .cars-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:55px 5%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">RAED ALMAJAL</div>
+
+<div>
+<a href="#cars">Vehicles</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<div>
+
+<h1>RAED <span>ALMAJAL</span></h1>
+
+<p>
+Premium Vehicles • Cars • Trucks • Heavy Equipment
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section" id="cars">
+
+<h2 class="section-title">
+Available <span>Vehicles</span>
+</h2>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Search for a vehicle..."
+onkeyup="searchCars()">
+
+</div>
+
+
+<div class="cars-grid" id="carsGrid">
+
+
+<!-- ========================= -->
+<!-- VEHICLE 1 -->
+<!-- ========================= -->
+
+<div class="car-card" data-name="Vehicle 1">
+
+<div class="car-image">
+
+<img id="car1-image" src="IMG_7370.jpeg">
+
+<button class="image-btn prev"
+onclick="changeImage(1,-1)">‹</button>
+
+<button class="image-btn next"
+onclick="changeImage(1,1)">›</button>
+
+<div class="image-counter" id="counter1">
+1 / 3
+</div>
+
+</div>
+
+<div class="car-info">
+
+<h3>Vehicle 1</h3>
+
+<div class="specs">
+
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>Premium</div>
+
+</div>
+
+<div class="price">
+Contact for Price
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- VEHICLE 2 -->
+<!-- ========================= -->
+
+<div class="car-card" data-name="Vehicle 2">
+
+<div class="car-image">
+
+<div style="
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#777;
+font-size:18px;
+">
+Vehicle Photo
+</div>
+
+</div>
+
+<div class="car-info">
+
+<h3>Vehicle 2</h3>
+
+<div class="specs">
+
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>4x4</div>
+
+</div>
+
+<div class="price">
+Contact for Price
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- VEHICLE 3 -->
+<!-- ========================= -->
+
+<div class="car-card" data-name="Vehicle 3">
+
+<div class="car-image">
+
+<div style="
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#777;
+font-size:18px;
+">
+Vehicle Photo
+</div>
+
+</div>
+
+<div class="car-info">
+
+<h3>Vehicle 3</h3>
+
+<div class="specs">
+
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>Premium</div>
+
+</div>
+
+<div class="price">
+Contact for Price
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- VEHICLE 4 -->
+
+<div class="car-card" data-name="Vehicle 4">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 4</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>4x4</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 5 -->
+
+<div class="car-card" data-name="Vehicle 5">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 5</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>Premium</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 6 -->
+
+<div class="car-card" data-name="Vehicle 6">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 6</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Diesel</div>
+<div>4x4</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 7 -->
+
+<div class="car-card" data-name="Vehicle 7">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 7</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>Premium</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 8 -->
+
+<div class="car-card" data-name="Vehicle 8">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 8</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>4x4</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 9 -->
+
+<div class="car-card" data-name="Vehicle 9">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 9</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Diesel</div>
+<div>4x4</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 10 -->
+
+<div class="car-card" data-name="Vehicle 10">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 10</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>Premium</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 11 -->
+
+<div class="car-card" data-name="Vehicle 11">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 11</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Petrol</div>
+<div>4x4</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+<!-- VEHICLE 12 -->
+
+<div class="car-card" data-name="Vehicle 12">
+
+<div class="car-image">
+<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#777;">
+Vehicle Photo
+</div>
+</div>
+
+<div class="car-info">
+<h3>Vehicle 12</h3>
+
+<div class="specs">
+<div>Year: 2025</div>
+<div>Automatic</div>
+<div>Diesel</div>
+<div>Premium</div>
+</div>
+
+<div class="price">Contact for Price</div>
+
+<a class="whatsapp"
+href="https://wa.me/218918488999"
+target="_blank">WhatsApp</a>
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="section services" id="services">
+
+<h2 class="section-title">
+Our <span>Services</span>
+</h2>
+
+<div class="services-grid">
+
+<div class="service">
+<h3>Vehicle Import</h3>
+<p>Importing premium vehicles from international markets.</p>
+</div>
+
+<div class="service">
+<h3>Heavy Equipment</h3>
+<p>Trucks and heavy machinery for business and construction.</p>
+</div>
+
+<div class="service">
+<h3>Professional Support</h3>
+<p>Professional assistance from selection to delivery.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section contact" id="contact">
+
+<h2 class="section-title">
+Contact <span>Us</span>
+</h2>
+
+<p>📞 +218 91 848 8999</p>
+
+<p>✉️ RAEDALMAGAL@gmail.com</p>
+
+<p>📍 Libya</p>
+
+<br>
+
+<a
+class="whatsapp"
+style="max-width:300px;margin:auto;"
+href="https://wa.me/218918488999"
+target="_blank">
+
+Contact us on WhatsApp
+
+</a>
+
+</section>
+
+
+<footer>
+
+© 2026 RAED ALMAJAL — Premium Vehicles
+
+</footer>
+
+
 <script>
-  const carImages = {
-    1: [
-      "IMG_7370.jpeg"
-    ],
 
-    2: [
-      "IMG_7369.jpeg"
-    ],
+/* الصور الثلاث في إعلان واحد */
 
-    3: [
-      "IMG_7368.jpeg"
-    ]
-  };
+const carImages = {
 
-  const currentImage = {
-    1: 0,
-    2: 0,
-    3: 0
-  };
+1: [
+"IMG_7370.jpeg",
+"IMG_7369.jpeg",
+"IMG_7368.jpeg"
+]
 
-  function changeImage(carNumber, direction) {
-    const images = carImages[carNumber];
+};
 
-    if (images.length <= 1) {
-      return;
-    }
+const currentImage = {
 
-    currentImage[carNumber] += direction;
+1:0
 
-    if (currentImage[carNumber] < 0) {
-      currentImage[carNumber] = images.length - 1;
-    }
+};
 
-    if (currentImage[carNumber] >= images.length) {
-      currentImage[carNumber] = 0;
-    }
 
-    document.getElementById(
-      "car" + carNumber + "-image"
-    ).src = images[currentImage[carNumber]];
+function changeImage(carNumber,direction){
 
-    document.getElementById(
-      "counter" + carNumber
-    ).textContent =
-      (currentImage[carNumber] + 1) + " / " + images.length;
-  }
+const images = carImages[carNumber];
+
+currentImage[carNumber] += direction;
+
+if(currentImage[carNumber] < 0){
+
+currentImage[carNumber] = images.length - 1;
+
+}
+
+if(currentImage[carNumber] >= images.length){
+
+currentImage[carNumber] = 0;
+
+}
+
+document.getElementById("car"+carNumber+"-image").src =
+images[currentImage[carNumber]];
+
+document.getElementById("counter"+carNumber).textContent =
+(currentImage[carNumber] + 1) + " / " + images.length;
+
+}
+
+
+/* البحث */
+
+function searchCars(){
+
+const search =
+document.getElementById("search").value.toLowerCase();
+
+const cars =
+document.querySelectorAll(".car-card");
+
+cars.forEach(function(car){
+
+const name =
+car.getAttribute("data-name").toLowerCase();
+
+if(name.includes(search)){
+
+car.style.display="block";
+
+}else{
+
+car.style.display="none";
+
+}
+
+});
+
+}
+
 </script>
+
+</body>
+</html>
