@@ -1,22 +1,29 @@
-const seed=[
-{name:"Mercedes-Benz GLE 450",year:2023,price:"$78,500",specs:"3.0L V6 Turbo · Automatic · Petrol"},
-{name:"BMW X5 xDrive40i",year:2022,price:"$62,000",specs:"3.0L · AWD · Petrol"},
-{name:"Range Rover Sport",year:2022,price:"$58,000",specs:"3.0L · AWD · Petrol"},
-{name:"Toyota Land Cruiser 300",year:2023,price:"$72,000",specs:"3.5L V6 · 4WD · Petrol"}
-];
-let cars=JSON.parse(localStorage.getItem("raedCars")||"null")||seed;
-function render(){
- const q=document.getElementById("search").value.toLowerCase(), y=document.getElementById("year").value;
- const grid=document.getElementById("grid"); grid.innerHTML="";
- cars.filter(c=>(!q||c.name.toLowerCase().includes(q))&&(!y||String(c.year)==y)).forEach((c,i)=>{
-  const d=document.createElement("div"); d.className="card";
-  d.innerHTML=`<img src="${c.photo||'assets/car-placeholder.svg'}" alt="${c.name}"><div class="card-body"><h3>${c.name}</h3><div>${c.year} · ${c.specs||""}</div><div class="price">${c.price}</div><button class="btn" onclick="removeCar(${i})">حذف</button></div>`;
-  grid.appendChild(d);
- });
- const ys=[...new Set(cars.map(c=>c.year))].sort((a,b)=>b-a), sel=document.getElementById("year");
- sel.innerHTML='<option value="">كل السنوات</option>'+ys.map(v=>`<option>${v}</option>`).join("");
-}
-function openForm(){document.getElementById("modal").style.display="flex"}function closeForm(){document.getElementById("modal").style.display="none"}
-function removeCar(i){if(confirm("حذف هذه السيارة؟")){cars.splice(i,1);localStorage.setItem("raedCars",JSON.stringify(cars));render()}}
-document.getElementById("carForm").onsubmit=e=>{e.preventDefault();const f=document.getElementById("photo").files[0],r=new FileReader();r.onload=()=>{cars.push({name:name.value,year:+yearInput.value,price:price.value,specs:specs.value,photo:r.result});localStorage.setItem("raedCars",JSON.stringify(cars));e.target.reset();closeForm();render()};r.readAsDataURL(f)};
-render();
+📍 Tripoli, Libya☎ +218 91 848 8999WhatsAppAR | EN
+الرئيسيةالسياراتالخدماتمن نحنتواصل معنا
+شريكك الموثوق
+RAED ALMAGAL
+استيراد السيارات والشاحنات والمعدات الثقيلة
+نوفر مركبات ومعدات من الأسواق العالمية إلى ليبيا بجودة وخدمة احترافية.
+عرض السيارات
+🛡️ ضمان الجودةاختيار وفحص المركبات
+🌐 استيراد عالميمصادر من أسواق موثوقة
+🤝 خدمة احترافيةمن الشراء حتى التسليم
+🚚 تسليم منظمحلول شحن واستيراد
+المخزون
+السيارات المعروضة
++ إضافة سيارة
+كل السنوات
+
+خدمات الاستيراد
+اختيار المركبة، التفاوض والشراء، تجهيز المستندات، الشحن والمتابعة حتى وصول المركبة.
+من نحن
+RAED ALMAGAL
+شركة متخصصة في استيراد السيارات والشاحنات والمعدات الثقيلة وتوفير حلول شراء وشحن للعملاء في ليبيا.
+تواصل معنا
+Tripoli, Libya
++218 91 848 8999 · raedalmagal@gmail.com
+تواصل معنا عبر WhatsApp
+© 2026 RAED ALMAGAL — Import of Cars, Trucks & Heavy Equipment
+×
+إضافة سيارة
+اختر صورة السيارة إضافة إلى الموقع
