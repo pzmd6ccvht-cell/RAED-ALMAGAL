@@ -283,23 +283,97 @@ grid-template-columns:1fr;
 padding:55px 5%;
 }
 
-}
-.company-info{
+}.company-info{
   max-width:1100px;
-  margin:60px auto;
-  padding:30px;
-  background:#111;
-  border-radius:16px;
-  line-height:1.8;
+  margin:70px auto;
+  padding:45px 30px;
+  text-align:center;
+  background:linear-gradient(145deg,#0f0f0f,#181818);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.company-badge{
+  display:inline-block;
+  padding:8px 16px;
+  margin-bottom:18px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:50px;
+  font-size:12px;
+  letter-spacing:2px;
+  opacity:.8;
 }
 
 .company-info h2{
-  margin-bottom:20px;
+  font-size:38px;
+  margin:0 0 12px;
 }
 
-.company-info a{
-  color:#fff;
+.company-subtitle{
+  font-size:17px;
+  opacity:.8;
+  margin-bottom:12px;
+}
+
+.company-arabic{
+  direction:rtl;
+  font-size:17px;
+  line-height:1.9;
+  opacity:.85;
+  margin-bottom:35px;
+}
+
+.company-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.info-card{
+  display:block;
+  padding:25px 15px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
   text-decoration:none;
+  color:#fff;
+  transition:.3s;
+}
+
+.info-card:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,.08);
+}
+
+.info-card span{
+  font-size:28px;
+}
+
+.info-card h3{
+  margin:12px 0 6px;
+  font-size:17px;
+}
+
+.info-card p{
+  margin:0;
+  font-size:14px;
+  opacity:.8;
+}
+
+@media(max-width:700px){
+  .company-info{
+    margin:45px 5%;
+    padding:35px 18px;
+  }
+
+  .company-info h2{
+    font-size:30px;
+  }
+
+  .company-cards{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 
@@ -800,26 +874,41 @@ WhatsApp
 
 
 <section id="company-info" class="company-info">
-  <h2>Company Information</h2>
 
-  <p><strong>Company Name:</strong> RAED ALMAGAL</p>
+  <div class="company-badge">OFFICIAL COMPANY</div>
 
-  <p>
-    <strong>Business Activity:</strong><br>
+  <h2>RAED ALMAGAL</h2>
+
+  <p class="company-subtitle">
+    Import of Vehicles, Spare Parts, Heavy Equipment and Trucks
+  </p>
+
+  <p class="company-arabic">
     رائد المجال لاستيراد السيارات وقطع غيارها والمعدات الثقيلة وقطع غيارها والشاحنات
   </p>
 
-  <p><strong>Location:</strong> Tripoli, Libya</p>
+  <div class="company-cards">
 
-  <p>
-    <strong>Phone / WhatsApp:</strong>
-    <a href="https://wa.me/218918488999">+218 91 848 8999</a>
-  </p>
+    <div class="info-card">
+      <span>📍</span>
+      <h3>Location</h3>
+      <p>Tripoli, Libya</p>
+    </div>
 
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:RAEDALMAGAL@gmail.com">RAEDALMAGAL@gmail.com</a>
-  </p>
+    <a class="info-card" href="https://wa.me/218918488999">
+      <span>💬</span>
+      <h3>WhatsApp</h3>
+      <p>+218 91 848 8999</p>
+    </a>
+
+    <a class="info-card" href="mailto:RAEDALMAGAL@gmail.com">
+      <span>✉️</span>
+      <h3>Email</h3>
+      <p>RAEDALMAGAL@gmail.com</p>
+    </a>
+
+  </div>
+
 </section>
 <!-- SERVICES -->
 
